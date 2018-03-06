@@ -1,0 +1,158 @@
+.bloque {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .nombre {
+
+        font-weight: bold;
+    }
+
+    .title-ranking {
+        font-size: $font-size-h1;
+        display: flex;
+        height: 80px;
+        justify-content: center;
+        align-items: center;
+        color: $color-sidonia-orange;
+        background-color: $color-less-is-less;
+        font-style: italic;
+    }
+
+    .ranking-container {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+
+        @include if-desktop {
+            flex-direction: row;
+        }
+
+        .album-item {
+            display: flex;
+            flex-direction: column;
+            height: 800px;
+            align-items: center;
+            justify-content: space-around;
+
+            @include if-mobile-landscape {
+                height: 550px;
+                flex-direction: row;
+            }
+
+            @include if-desktop {
+                flex-direction: column;
+                height: 900px;
+            }
+    
+            .informacion {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 90%;
+
+                @include if-mobile-landscape {
+                    width: 40%;
+                }
+
+                @include if-desktop {
+                    width: 80%;
+                }
+
+                .nombre {
+                    font-size: $font-size-h3;
+                    padding-bottom: 30px;
+                    font-family: $title-font-family;
+                }
+
+                .ventas {
+                    font-size: $font-size-h5;
+                    color: $color-amazing-39;
+                }
+                
+                .texto {
+                    padding-bottom: 20px;
+                    font-size: $font-size-base;
+                    line-height: 1.7em;
+                }
+            }
+
+            .img-ranking {
+                height: 300px;
+                transition: height 0.5s;
+                &:hover {
+                    height: 400px;
+                }
+                @include if-mobile-landscape {
+                    height: 350px;
+                }
+
+                @include if-desktop {
+                    height: 300px;
+                }
+                
+
+
+            }
+
+            &.uno {
+                background-color: transparentize($color-grastur, 0.4);
+
+                @include if-desktop {
+                    order: 2;
+                    flex: 10;
+            
+                }
+                img {
+                    @include if-desktop {
+                        order: 1;
+                        
+                    }
+                }
+            }
+    
+            &.dos {
+                background-color: transparentize($color-grastur, 0.6);
+
+                @include if-desktop {
+                    order: 1;
+                    flex: 7;
+                }
+
+                img {
+                    @include if-mobile-landscape {
+                        order: 1;
+                        
+                    }
+                }
+            }
+    
+            &.tres {
+                background-color: transparentize($color-grastur, 0.8);
+
+                @include if-desktop {
+                    order: 3;
+                    flex: 7;
+                }
+            }
+            
+        }
+
+        
+    }
+
+    .encuesta{
+        order:2;
+        display:block;
+        width: 100%;
+        .input{
+            height: 100px;
+            width: 80%;
+        }
+        
+        .boton{
+            width: 30%;
+        }
+    }
+}
+

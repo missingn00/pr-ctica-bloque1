@@ -1,0 +1,50 @@
+.song-form {
+    .ui-status {
+        &.error {
+            text-align: center;
+            background-color: $form-error-background-color;
+            padding: 10px;
+            border-radius: 5px;
+            color: $form-error-font-color;
+            margin-bottom: 10px;
+            display: none;
+        }
+        &.loading {
+            text-align: center;
+            margin-bottom: 10px;
+            display: none;
+        }
+
+        &.ideal {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+         
+            
+
+        }
+    }
+    
+    &.error .ui-status.error {
+        display: block;
+    }
+    
+    &.loading .ui-status.loading {
+        display: block;
+    }
+
+    &.ideal .ui-status.ideal {
+        display: flex;
+    }
+
+    
+    @include if-tablet-landscape {
+        .form-control-group {
+            box-sizing: border-box;
+            width: calc(50% - 4px);
+            display: inline-block;
+            padding: 0 5px;
+        }
+    }
+    
+}
